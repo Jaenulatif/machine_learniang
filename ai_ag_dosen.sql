@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 01, 2020 at 10:23 AM
--- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.9
+-- Generation Time: Oct 01, 2020 at 10:37 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,6 +33,13 @@ CREATE TABLE `tb_dosen` (
   `keterangan` varchar(30) NOT NULL,
   `kode_prodi` char(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_dosen`
+--
+
+INSERT INTO `tb_dosen` (`kode_dosen`, `nama_dosen`, `keterangan`, `kode_prodi`) VALUES
+('IF1', 'Sulistyowati', 'Ketua Prodi Informatika', 'IF');
 
 -- --------------------------------------------------------
 
@@ -133,8 +139,15 @@ CREATE TABLE `tb_matkul` (
   `nama_matkul` varchar(60) NOT NULL,
   `sks` int(2) NOT NULL,
   `kode_prodi` char(3) NOT NULL,
-  `semester` int(1) NOT NULL
+  `kode_semester` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_matkul`
+--
+
+INSERT INTO `tb_matkul` (`kode_matkul`, `nama_matkul`, `sks`, `kode_prodi`, `kode_semester`) VALUES
+('IF1094', 'Konsep Pemrograman', 4, 'IF', 1);
 
 -- --------------------------------------------------------
 
@@ -184,6 +197,25 @@ CREATE TABLE `tb_ruang` (
 INSERT INTO `tb_ruang` (`kode_ruang`, `nama_ruang`, `keterangan`, `kode_prodi`) VALUES
 (1, 'LIK', 'Laboratorium', ''),
 (2, 'LIK', 'Laboratorium Ilmu Komputer', 'IF');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_semester`
+--
+
+CREATE TABLE `tb_semester` (
+  `kode_semester` int(1) NOT NULL,
+  `nama_semester` varchar(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_semester`
+--
+
+INSERT INTO `tb_semester` (`kode_semester`, `nama_semester`) VALUES
+(1, 'Ganjil'),
+(2, 'Genap');
 
 -- --------------------------------------------------------
 

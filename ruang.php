@@ -37,7 +37,7 @@
      <?php if ($_SESSION['kode_level'] == '1'){ 
         $q = esc_field($_GET['q']);
         $ruang_prodi = $_SESSION['kode_prodi'];
-        $rows = $db->get_results("SELECT R.kode_ruang, R.nama_ruang,R.kode_prodi,P.nama_prodi
+        $rows = $db->get_results("SELECT R.kode_ruang, R.nama_ruang,R.kode_prodi,R.keterangan,P.nama_prodi
          FROM tb_ruang R 
             INNER JOIN tb_prodi P ON R.kode_prodi = P.kode_prodi 
         WHERE R.kode_prodi = P.kode_prodi 

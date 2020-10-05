@@ -22,8 +22,8 @@
                                 <?php endif ?>
                             </div>
                             <div class="form-grup">
-                            <!-- <label>Kode Prodi<span class="text-danger">*</span></label> -->
-                                 <input class="form-control" type="hidden"  name="kode" value="<?=addslashes($_POST["kode"])?>"/>
+                                <label>Kode Kelas<span class="text-danger">*</span></label>
+                                 <input class="form-control" type="text"  name="kode" value="<?=addslashes($_POST["kode"])?>"/>
                             </div>
 
                             <div class="form-group">

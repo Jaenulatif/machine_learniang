@@ -1,2 +1,2 @@
 # machine_learniang
-Tugas 2 machine learning
+Tugas 2 machine learning bru
